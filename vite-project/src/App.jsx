@@ -1,34 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+function Header() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          Saludos "Holi"  {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Hola Mundo!!!      </p>
-    </>
-  )
+    <header>
+      <img src="src/assets/react-logo-xs.png" alt="React logo" />
+      <h1>React Fundamentos</h1>
+      <p>
+        ¡Conceptos fundamentales de React que necesitas conocer para desarrollar
+        cualquier app con esta famosa librería!
+      </p>
+    </header>
+  );
 }
 
-export default App
+function App() {
+  return (
+    <div>
+      <Header />
+      <main>
+        <h2>¡Comenzamos Picando Código en React!</h2>
+      </main>
+    </div>
+  );
+}
+
+export default App;
