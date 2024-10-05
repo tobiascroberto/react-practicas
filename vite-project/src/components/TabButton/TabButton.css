@@ -30,3 +30,8 @@
     font-size: 1.3rem;
     font-weight: bold;
   }
+
+  #reactExamples menu li {
+    list-style: none;
+    display: inline;
+  }

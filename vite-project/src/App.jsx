@@ -1,11 +1,16 @@
 import Header from './components/Header/Header.jsx';
 import CoreConcepts from './components/CoreConcepts/CoreConcepts.jsx';
-import { CORE_CONCEPTS } from './data.js'; 
+import { CORE_CONCEPTS, EXAMPLES } from './data.js'; 
 import TabButton from './components/TabButton/TabButton.jsx';
+import { useState } from 'react';
+
 
 function App() {
-  function handleClickMenu(){
-    console.log("Ey! Estas pulsando un boton de mi menu!");
+  const [selectedTopic,setSelected] = useState("components")
+
+  function handleClickMenu(SelectedButton){
+    setSelected(SelectedButton);
+    console.log(`Ey! Estas pulsando el bóton con el valor: ${SelectedButton}`);
   }
   return (
 
@@ -27,12 +32,20 @@ function App() {
       <section id="reactExamples">
         <h2>Ejemplos React</h2>
         <menu>
-         <TabButton onClick={handleClickMenu}>Componentes</TabButton>
-         <TabButton onClick={handleClickMenu}>JSX</TabButton>
-         <TabButton onClick={handleClickMenu}>Props</TabButton>
-         <TabButton onClick={handleClickMenu}>Estados</TabButton>
+         <TabButton onClick={()=>handleClickMenu("components")}>Componentes</TabButton>
+         <TabButton onClick={()=>handleClickMenu("jsx")}>JSX</TabButton>
+         <TabButton onClick={()=>handleClickMenu("props")}>Props</TabButton>
+         <TabButton onClick={()=>handleClickMenu("state")}>Estados</TabButton>
         </menu>
-        Contenido Dinamico
+        <div id="tab-content">
+          <h3>{EXAMPLES[selectedTopic].title}</h3>
+          <p>{EXAMPLES[selectedTopic].description}</p>
+          <pre>
+            <code>
+            {EXAMPLES[selectedTopic].code}
+            </code>
+          </pre>
+        </div>
       </section>
       <main>
         <h2>¡Comenzamos Picando Código en React!</h2>
