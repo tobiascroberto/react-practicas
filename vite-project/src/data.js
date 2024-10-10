@@ -39,6 +39,7 @@ export const EXAMPLES = {
   function Welcome() {
     return <h1>¡Hola, Mundo!</h1>;
   }`,
+        key: "components",
   },
   jsx: {
     title: "JSX",
@@ -49,6 +50,7 @@ export const EXAMPLES = {
     <h1>Bienvenido {userName}</h1>
     <p>¡Es hora de aprender React!</p>
   </div>`,
+  key: "jsx"
   },
   props: {
     title: "Props",
@@ -58,6 +60,8 @@ export const EXAMPLES = {
   function Welcome(props) {
     return <h1>Hola, {props.name}</h1>;
   }`,
+  key: "props"
+
   },
   state: {
     title: "Estado",
@@ -78,5 +82,7 @@ export const EXAMPLES = {
       </div>
     );
   }`,
+  key: "state"
+
   },
 };
